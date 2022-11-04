@@ -53,6 +53,7 @@
         <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
         <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
         <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> MEDIA</a>
+		<a href="#credit" class="w3-bar-item w3-button"><i class="fa fa-th"></i> CREDITS</a>
       </div>
       <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -70,6 +71,7 @@
     <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
     <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
     <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">MEDIA</a>
+	<a href="#credit" onclick="w3_close()" class="w3-bar-item w3-button">CREDITS</a>
   </nav>
 
   <!-- Header with full-height image -->
@@ -151,19 +153,26 @@
           would sometimes take a hit. One example of an area in which we encountered this was in relation to lighting in
           the Unity Universal Render Pipeline, where the graphics renderer would automatically stop rendering light
           sources when the number of light sources in the scene became too high (We later solved this by switching to
-          the ultimate quality preset in the URP and increasing the max limit). Throughout the project, we also had
-          occasional issues with networking. [Alex most qualified to write about this] . Towards the end of the project,
-          the network issues were largely resolved, but we still had occasional connection issues, and both users needed
-          to restart the game to restart. The electrical arc ray also held its share of issues. Mainly these issues
-          related to making it so the electric arc would behave realistically, chain between enemies as well as spawning
-          smaller “child arcs” from the main arcs, without causing too much of a performance hit.
+          the ultimate quality preset in the URP and increasing the max limit).
+		  <br><br>
+		  Throughout the project, we also had occasional issues with networking. 
+		  The asynchronous nature of the two clients made it hard to use already existing network solutions such as
+		  Unity Netcode for GameObjects. Because of this we designed and implemented our own network protocol for the game,
+		  which we had to revise multiple times to reduce the amount of sent data as the throughput would be too high,
+		  overwhelming both clients and making them drop packages. The inherent asynchronous nature of networking also
+		  caused minor issues, as both clients had to be synched to both each other, but also their respective networking
+		  thread, causing bugs stemming from race conditions between the game logic thread and networking thread.
+		  Towards the end of the project, the network issues were largely resolved, but we still had occasional connection
+		  issues, and both users needed to restart the game to restart. The electrical arc ray also held its share of issues.
+		  Mainly these issues related to making it so the electric arc would behave realistically, chain between enemies as
+		  well as spawning smaller “child arcs” from the main arcs, without causing too much of a performance hit.
           <br><br>
           Another, more wide range obstacle which remained in the game, is that it isn't currently playable in single
           player form (not counting just gawking at the graphics in the VR headset). At one point in the project, the
           group had plans on making the enemies spawn from set monster spawners which would generate monsters over time,
           as opposed to having the non-vr player actively summon them. By implementing this, the idea would be that the
           game could potentially be played by either one or two players but we never had enough time to implement this,
-          as we prioritized fixing
+          as we prioritized fixing the features we already had.
         </p>
       </div>
     </div>
@@ -196,6 +205,9 @@
           <br><br>
           The view with the VR headset is really different from the desktop view. Thus when you are doing graphic
           programming on VR it's important to also test it on the VR headset.
+		  <br><br>
+		  Audio is additive, and so great care must be taken to adjust for multiple simultaneous sound sources to create a
+		  meaningful experience.
         </p>
       </div>
     </div>
@@ -231,7 +243,11 @@
             <h3>Alexander Danielsson</h3>
             <p class="w3-opacity">Sound & 2nd Player Experience Director</p>
             <a id="AEmail" href=""></a>
-            <p>GREAT Description of individual contributions</p>
+            <p>Implemented the game logic for the non-vr player and designed and implemented the network protocol
+			connecting the two clients together. Set up the project to use 3D sounds and spatialization using
+			the Steam Audio unity plugin, and configured the plugin to create a smooth and high fidelity auditory
+			experience. Selected and tweaked individual sound effects, as well as their 3D sound properties, and set up
+			the audio geometry of the scenes. Implemented the game logic to spawn sound effects.</p>
           </div>
         </div>
       </div>
@@ -360,8 +376,11 @@
         <strong>Fire texture used for Fire Graphics</strong> - website <em>80 level</em>, Author <em>Nadir Khabibullin</em> <br>
         <strong>Noise texture used for Fire Graphics</strong> - Author <em>Yoeri Luos Vleer</em> <br>
         <strong>Fire textures used for first version of Fire Sword</strong> - Youtuber <em>Sirhaian'Arts</em><br>
-        <strong>Sound for fireball, explosion and background</strong> - website <em>Pixabay</em><br>
         <strong>Death text font</strong> - website <em>dafont</em>, Author <em>Jonathan Harris</em><br>
+		<strong>Sound Effects for fireball, explosion and background</strong> - website <em>Pixabay</em><br>
+		<strong>Sound Effects for Enemies and Player</strong> - website <em>mixkit</em><br>
+		<strong>Background music for The making of Documentary - "They Said I Can't"</strong> - website <em>fesliyanstudios</em>, Author <em>David Fesliyan</em><br>
+		<strong>Steam® Audio SDK</strong> - website <em>steam-audio</em>, Copyright <em>Steam® Audio, Copyright 2017 – 2022, Valve Corp. All rights reserved</em><br>
       </p>
     </div>
   </div>
