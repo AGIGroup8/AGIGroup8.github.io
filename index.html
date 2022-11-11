@@ -39,20 +39,23 @@
     .w3-bar .w3-button {
       padding: 16px;
     }
-    #button{
+
+    #button {
       border-radius: 3%;
       background-color: rgb(135, 84, 45);
       margin-top: 50px;
       opacity: 80%;
     }
-    .padding{
+
+    .padding {
       padding-top: 50px;
     }
-    .background-img{
+
+    .background-img {
       background-image: url("img/media/magic.png");
       background-repeat: no-repeat;
-    background-position: right;
-    background-size: 300px 300px;
+      background-position: right;
+      background-size: 300px 300px;
     }
   </style>
 </head>
@@ -68,7 +71,7 @@
         <a href="#about" class="w3-bar-item w3-button">ABOUT</a>
         <a href="#team" class="w3-bar-item w3-button"><i class="fa fa-user"></i> TEAM</a>
         <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> MEDIA</a>
-		<a href="#credit" class="w3-bar-item w3-button"><i class="fa fa-th"></i> CREDITS</a>
+        <a href="#credit" class="w3-bar-item w3-button"><i class="fa fa-th"></i> CREDITS</a>
       </div>
       <!-- Hide right-floated links on small screens and replace them with a menu icon -->
 
@@ -86,7 +89,7 @@
     <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
     <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
     <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">MEDIA</a>
-	<a href="#credit" onclick="w3_close()" class="w3-bar-item w3-button">CREDITS</a>
+    <a href="#credit" onclick="w3_close()" class="w3-bar-item w3-button">CREDITS</a>
   </nav>
 
   <!-- Header with full-height image -->
@@ -95,8 +98,7 @@
       <span class="w3-jumbo w3-hide-small"></span><br>
       <span class="w3-xxlarge w3-hide-large w3-hide-medium"></span><br>
       <span class="w3-large"></span>
-      <p><a href="#about"
-          id="button"
+      <p><a href="#about" id="button"
           class="w3-button w3-padding-large w3-large w3-margin-top w3-hover-opacity-off">Learn
           more</a></p>
     </div>
@@ -129,17 +131,18 @@
           width="700" height="394">
       </div>
     </div>
-    
+
     <div class="w3-row-padding w3-large padding">
       <div class="w3-col m6">
-        
+
         <h3 class="w3-center">Asymmetrical gameplay</h3>
         <p>
           Featuring two very distinct gameplay experiences, two players interact and compete against each other, one
           through an action packed hectic perspective with a VR headset and the other through a calculating and
           strategic perspective, interacting through a monitor and mouse.
         </p>
-        <img class="w3-image w3-round-large padding" src="img/media/pic of battle.png" alt="Hard work infront of a computer"width="700" height="394">
+        <img class="w3-image w3-round-large padding" src="img/media/pic of battle.png"
+          alt="Hard work infront of a computer" width="700" height="394">
         <h3 class="w3-center padding">Lighting the dark</h3>
         <p>
           When setting out on the project, one of the main motivations of the group was to experiment with high fidelity
@@ -156,9 +159,9 @@
           sharing and documentation.
         </p>
       </div>
-      
+
       <div class="w3-col m6">
-       
+
         <h3 class="w3-center">Obstacles</h3>
         <p>
           During the project, the group also ran into a number of obstacles. Mainly these issues arose in relation to
@@ -167,18 +170,23 @@
           the Unity Universal Render Pipeline, where the graphics renderer would automatically stop rendering light
           sources when the number of light sources in the scene became too high (We later solved this by switching to
           the ultimate quality preset in the URP and increasing the max limit).
-		  <br><br>
-		  Throughout the project, we also had occasional issues with networking. 
-		  The asynchronous nature of the two clients made it hard to use already existing network solutions such as
-		  Unity Netcode for GameObjects. Because of this we designed and implemented our own network protocol for the game,
-		  which we had to revise multiple times to reduce the amount of sent data as the throughput would be too high,
-		  overwhelming both clients and making them drop packages. The inherent asynchronous nature of networking also
-		  caused minor issues, as both clients had to be synched to both each other, but also their respective networking
-		  thread, causing bugs stemming from race conditions between the game logic thread and networking thread.
-		  Towards the end of the project, the network issues were largely resolved, but we still had occasional connection
-		  issues, and both users needed to restart the game to restart. The electrical arc ray also held its share of issues.
-		  Mainly these issues related to making it so the electric arc would behave realistically, chain between enemies as
-		  well as spawning smaller “child arcs” from the main arcs, without causing too much of a performance hit.
+          <br><br>
+          Throughout the project, we also had occasional issues with networking.
+          The asynchronous nature of the two clients made it hard to use already existing network solutions such as
+          Unity Netcode for GameObjects. Because of this we designed and implemented our own network protocol for the
+          game,
+          which we had to revise multiple times to reduce the amount of sent data as the throughput would be too high,
+          overwhelming both clients and making them drop packages. The inherent asynchronous nature of networking also
+          caused minor issues, as both clients had to be synched to both each other, but also their respective
+          networking
+          thread, causing bugs stemming from race conditions between the game logic thread and networking thread.
+          Towards the end of the project, the network issues were largely resolved, but we still had occasional
+          connection
+          issues, and both users needed to restart the game to restart. The electrical arc ray also held its share of
+          issues.
+          Mainly these issues related to making it so the electric arc would behave realistically, chain between enemies
+          as
+          well as spawning smaller “child arcs” from the main arcs, without causing too much of a performance hit.
           <br><br>
           Another, more wide range obstacle which remained in the game, is that it isn't currently playable in single
           player form (not counting just gawking at the graphics in the VR headset). At one point in the project, the
@@ -190,7 +198,7 @@
       </div>
     </div>
 
-    
+
 
     <div class="w3-row-padding w3-large padding">
       <div class="w3-col m6">
@@ -220,9 +228,10 @@
           <br>
           The view with the VR headset is really different from the desktop view. Thus when you are doing graphic
           programming on VR it's important to also test it on the VR headset.
-		  <br>
-		  Audio is additive, and so great care must be taken to adjust for multiple simultaneous sound sources to create a
-		  meaningful experience.
+          <br>
+          Audio is additive, and so great care must be taken to adjust for multiple simultaneous sound sources to create
+          a
+          meaningful experience.
         </p>
       </div>
     </div>
@@ -238,14 +247,13 @@
           Utensil for Playing in the Immersive Game with Attachable Haptic. In SIGGRAPH Asia 2020 XR (pp. 1-2).
         </p>
       </div>
-    
-        
-          <div class="w3-col m6">
-            <img class="w3-image w3-round-large" src="img/media/sword.png" alt="Hard work infront of a computer"
-              >
-          </div>
-     
-    
+
+
+      <div class="w3-col m6">
+        <img class="w3-image w3-round-large" src="img/media/sword.png" alt="Hard work infront of a computer">
+      </div>
+
+
     </div>
   </div>
 
@@ -262,10 +270,11 @@
             <p class="w3-opacity">Sound & 2nd Player Experience Director</p>
             <a id="AEmail" href=""></a>
             <p>Implemented the game logic for the non-vr player and designed and implemented the network protocol
-			connecting the two clients together. Set up the project to use 3D sounds and spatialization using
-			the Steam Audio unity plugin, and configured the plugin to create a smooth and high fidelity auditory
-			experience. Selected and tweaked individual sound effects, as well as their 3D sound properties, and set up
-			the audio geometry of the scenes. Implemented the game logic to spawn sound effects.</p>
+              connecting the two clients together. Set up the project to use 3D sounds and spatialization using
+              the Steam Audio unity plugin, and configured the plugin to create a smooth and high fidelity auditory
+              experience. Selected and tweaked individual sound effects, as well as their 3D sound properties, and set
+              up
+              the audio geometry of the scenes. Implemented the game logic to spawn sound effects.</p>
           </div>
         </div>
       </div>
@@ -302,10 +311,13 @@
             <h3>Marcus Holmberg</h3>
             <p class="w3-opacity">Spell Director (and forced Jacob to Web Design)</p>
             <a id="MEmail" href=""></a>
-            <p> Responsible for the VR interaction input from the controllers used for the spells as well as the spell logic 
-                (scripting for each spell) and the underlying player mana system. Created the particle effects and graphics for 
-                the lightning spell and some smaller script-based parts of the fireball graphics, such as the size depending on 
-                its level of charge. Also did much of the underlying game logic such as pausing & restarting the game.</p>
+            <p> Responsible for the VR interaction input from the controllers used for the spells as well as the spell
+              logic
+              (scripting for each spell) and the underlying player mana system. Created the particle effects and
+              graphics for
+              the lightning spell and some smaller script-based parts of the fireball graphics, such as the size
+              depending on
+              its level of charge. Also did much of the underlying game logic such as pausing & restarting the game.</p>
           </div>
         </div>
       </div>
@@ -316,7 +328,9 @@
             <h3>Ryan Ren</h3>
             <p class="w3-opacity">Enemy Designer & Tablet UI Designer & Model Rigging Director</p>
             <a id="REmail" href=""></a>
-            <p>Responsible for all enemy designs which include concepts、 sketches 、modeling and animation. Joint the VR player with the virtual body in-game and develop the rigging animation function. Design the tablet gameplay mechanics and User interface for the summoner player.</p>
+            <p>Responsible for all enemy designs which include concepts、 sketches 、modeling and animation. Joint the VR
+              player with the virtual body in-game and develop the rigging animation function. Design the tablet
+              gameplay mechanics and User interface for the summoner player.</p>
           </div>
         </div>
       </div>
@@ -364,11 +378,12 @@
     <div class="w3-row-padding w3-large " style="margin-top:64px">
 
       <div class="w3-col m6">
-      
+
         <h3 class="w3-center">Game Features</h3>
         <video class="w3-col m12" controls>
           <source src="video/GameFeature.mp4" type="video/mp4">
-          <source src="https://media.githubusercontent.com/media/AGIGroup8/AGIGroup8.github.io/master/video/Gamefeatures.mp4"
+          <source
+            src="https://media.githubusercontent.com/media/AGIGroup8/AGIGroup8.github.io/master/video/Gamefeatures.mp4"
             type="video/mp4">
 
           Your browser does not support the video tag.
@@ -409,15 +424,20 @@
 
     <div class="w3-row-padding w3-large background-img" style="padding:0px 80px;">
       <p>
-        <strong>Fire texture used for Fire Graphics</strong> - website <em>80 level</em>, Author <em>Nadir Khabibullin</em> <br>
+        <strong>Fire texture used for Fire Graphics</strong> - website <em>80 level</em>, Author <em>Nadir
+          Khabibullin</em> <br>
         <strong>Noise texture used for Fire Graphics</strong> - Author <em>Yoeri Luos Vleer</em> <br>
         <strong>Fire textures used for first version of Fire Sword</strong> - Youtuber <em>Sirhaian'Arts</em><br>
         <strong>Death text font</strong> - website <em>dafont</em>, Author <em>Jonathan Harris</em><br>
-		<strong>Sound Effects for fireball, explosion and background</strong> - website <em>Pixabay</em><br>
-		<strong>Sound Effects for Enemies and Player</strong> - website <em>mixkit</em><br>
-		<strong>Background music for The making of Documentary - "They Said I Can't"</strong> - website <em>fesliyanstudios</em>, Author <em>David Fesliyan</em><br>
-		<strong>Steam® Audio SDK</strong> - website <em>steam-audio</em>, Copyright <em>Steam® Audio, Copyright 2017 – 2022, Valve Corp. All rights reserved</em><br>
-    <strong>Player Body Model in VR</strong> - website <em>Mixamo</em><br>
+        <strong>Tool used to edit sounds</strong> - software <em>audioalter</em>, Copyright link: <a
+          href="https://audioalter.com/licenses.txt">https://audioalter.com/licenses.txt</a> <br>
+        <strong>Sound Effects for fireball, explosion and background</strong> - website <em>Pixabay</em><br>
+        <strong>Sound Effects for Enemies and Player</strong> - website <em>mixkit</em><br>
+        <strong>Background music for The making of Documentary - "They Said I Can't"</strong> - website
+        <em>fesliyanstudios</em>, Author <em>David Fesliyan</em><br>
+        <strong>Steam® Audio SDK</strong> - website <em>steam-audio</em>, Copyright <em>Steam® Audio, Copyright 2017 –
+          2022, Valve Corp. All rights reserved</em><br>
+        <strong>Player Body Model in VR</strong> - website <em>Mixamo</em><br>
       </p>
     </div>
   </div>
